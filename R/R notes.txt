@@ -1,0 +1,234 @@
+R Programming
+-------------
+
+str()
+summary()
+names()
+class()
+
+**********************************
+
+Basic
+--------
+sqrt()
+getwd()
+ls()
+list.files()
+dir()
+args()
+
+**********************************
+
+Files  & Dirctories
+--------------------
+dir.create()
+file.create()
+file.exists()
+file.info()
+file.copy()
+file.path()
+
+**********************************
+
+Sequences
+---------
+1:20
+pi:10
+15:1
+seq(1,20)
+seq(0,10,by=0.5)
+seq(5, 10, length=30)	
+length()
+seq(along.with = my_seq) #my_seq is a numeric vector of length 30
+seq(5, 10, length=30
+seq_along(my_seq)
+rep(3, times=40) # repeats
+rep(c(0,1,2), times=10)
+rep(c(0,1,2), each=10)
+
+**********************************
+
+Vectors
+-------
+simple and common data structure 
+	> atomic vectors - one data type
+	> lists - multiple data types
+
+Atomic Vectors
+	> numeric
+	> integer
+	> character
+	> logical - TRUE, FALSE, NA
+	> complex
+	
+logical operators are `>`, `<=`, `==` `!=`
+c()
+paste() - 	to collapse the elements of a single character vector & 
+			to join the elements of multiple character vectors.
+			
+paste(my_name, collapse=" ")
+paste("Hello", "World")
+paste("Hello", "world!", sep = " ")
+paste(LETTERS, 1:4, sep = "-"
+
+LETTERS, letters - predefined vectors of alphabets in caps and small respectively
+	
+	
+**********************************
+
+Missing Values
+--------------
+
+NA  - Not Available
+NaN - Not a number
+Inf - Infinity
+
+rnorm()
+sample()
+
+y <- rnorm(1000)
+z <- rep(NA, 1000)
+my_sample <- sample(c(x,y), 100) # creates a vector by taking 100 values from x and y randomly; creates a sample
+my_na <- is.na(my_sample) # returns a logical vector with TRUE for NA and FALSE for non NA
+sum(my_na) # returns total number of NA's
+my_sample[!my_na] # to select non NA values in vector my_sample
+
+
+**********************************
+
+Subsetting Vectors
+------------------
+
+x[!is.na(x) & x > 0] -  returns a vector after excluding all NAs and elements <= 0 
+
+x[0] - numeric(0)
+x[1] - first element
+x[200] - NA
+
+x[1:10] - first 10 elements
+x[c(1,3,5,7)] - 1,3,5,7 elements
+x[c(-2,-10)] - all elements except 2 and 10
+x[-c(2,10)] - all elements except 2 and 10
+
+vect <- c(foo = 11, bar = 2, norf = NA).
+names(vect)
+
+names(vect) <- c("a", "b", "c")
+
+identical() - to check whether 2 vectors are identical
+
+**********************************
+
+
+Matrices and Data Frames
+------------------------
+
+dim() gives us the 'dimensions' of an object; can be used to get/set dimensions of an object
+attributes()
+class() - returns the class of the object 
+matrix()
+data.frame()
+
+rbind()
+cbind()
+
+colnames()
+names()
+
+**********************************
+
+
+Logical Operators
+------------------------
+| and || are same - OR operator
+& and && are same - AND operator
+identical()
+isTRUE()
+xor() - one T and one F returns T else F
+sample(10) - 10 sample numbers from 1 to 10 in random order
+
+which() - this takes a logical vector as an argument and returns the indices of the vector that are TRUE
+any() - will return TRUE if one or more of the elements in the logical vector is TRUE
+all() - will return TRUE if every element in the logical vector is TRUE.
+
+
+
+**********************************
+
+
+Functions
+------------------------
+
+1. Everything that exists is an object
+2. Everything that happens is a function call.
+
+Sys.Date()
+args()
+
+default arguments
+passing arguments with full name or partial name (in this order doesn't matter)
+passing function as an argument to another function
+
+creating user defined binary operator
+> 
+> "%*+%" <- function(x,y) { x * y + x + y}
+> 2 %*+% 3
+[1] 11
+>
+
+"..." argument - ellipsis
+> 
+> addab <- function(...) {
++   args <- list(...)
++   a <- args$a
++   b <- args$b
++   a + b
++ }
+> 
+> addab(a=3,b=5)
+[1] 8
+> 
+> 
+
+**********************************
+
+
+Dates and Times
+------------------------
+
+Dates are represented by the 'Date' class.
+Dates are stored as the number of days since 1970-01-01; -ve number for previous dates
+Times are represented by the 'POSIXct' and 'POSIXlt' classes
+Times are stored as
+	the number of seconds since 1970-01-01 (for 'POSIXct') 
+	a list of seconds, minutes, hours, etc. (for 'POSIXlt').
+
+
+Sys.Date() - current date
+Sys.time() - current time
+
+as.POSIXct(Sys.time())
+as.POSIXlt(Sys.time())
+
+unclass() - will tell the stored value for dates and times
+
+weekdays()
+months()
+quarters()
+
+strptime() - converts character vectors to POSIXlt
+difftime()
+lubridate
+
+
+
+
+
+
+
+
+
+
+
+
+

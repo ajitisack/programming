@@ -1,0 +1,5 @@
+gunzip r-base_3.4.0.orig.tar.gz
+tax -xvf r-base_3.4.0.orig.tar
+sudo ./configure --enable-R-shlib
+sudo make
+sudo make install

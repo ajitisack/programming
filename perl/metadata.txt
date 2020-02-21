@@ -1,0 +1,3 @@
+id:Int:1:3:N:
+name:Char:4:10:Y:
+dob:Date:14:8:Y:
